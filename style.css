@@ -36,12 +36,40 @@
 .main_logo img{
     width:15%;
     height: 15%;
+    /* animation: pulse 1s infinite; */
+    transition: box-shadow 2s;
 }
+
+.main_logo img:hover{
+    animation: rotate 1s linear 1 reverse;
+    box-shadow: 2px 4px 3px black;
+}
+
+@keyframes pulse{
+    0% {opacity: 0;}
+    100% {opacity: 0.8;}
+}
+@keyframes hulk{
+    0% {transform: scale(1,1);}
+    100% {transform: scale(2,2);}
+}
+@keyframes rotate{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+@keyframes rubber{
+    0% {transform: skew(0deg, 0deg);}
+    100% {transform: skew(30deg, 10deg);}
+}
+
 .main_cards{
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     margin-bottom: calc(var(--sfs) * 2);
+    margin-top: var(--sfs);
 }
+
+
 
 .card{
     display: flex;
@@ -52,4 +80,55 @@
     line-height: 1.4;
     letter-spacing: 0.5;
     padding: 15px;
+}
+.card__icon{
+    min-width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 30px;
+}
+.card__eye{
+    background-image: url('img/007-eye.png');
+}
+.card__deadline{
+    background-image: url('img/003-deadline.png');
+}
+.card__search{
+    background-image: url('img/009-search.png');
+}
+.card__idea{
+    background-image: url('img/037-idea-1.png');
+}
+.card__design{
+    background-image: url('img/035-graphic-design.png');
+}
+.card__support{
+    background-image: url('img/025-chatting.png');
+    animation-delay: 5.5s
+}
+.wrapper_form{
+    display: flex;
+    justify-content: center;
+    background-color: var(--dorange);
+    padding: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 250px;   
+    
+}
+input{
+    font-size: calc(var(--sfs)/1.5);
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.wrapper_form__legend{
+    color: var(--ddarkblue);
+    font-size: calc(var(--sfs)/1.2);
+    text-align: center;
 }

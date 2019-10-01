@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,47 +18,65 @@
     </div>
 <div class="main_cards">
     <article class="card">
-        <div class="card__icon  card__eye"></div>
+        <div class="card__icon  card__eye animated 1 fadeIn"></div>
         <div class="card__text">
             <h3> Внимательность к деталям</h3>
             <p> Наши дизайнеры очень внимательны к деталям</p>
         </div>
     </article>
     <article class="card">
-        <div class="card__icon card__deadline"></div>
+        <div class="card__icon card__deadline animated 1 fadeIn delay-1s"></div>
         <div class="card__text">
             <h3> Дедлайны</h3>
             <p>Мы всегда все делаем в сроки</p>
         </div>
     </article>
     <article class="card">
-        <div class="card__icon card__search"></div>
+        <div class="card__icon card__search animated 1 fadeIn delay-2s"></div>
         <div class="card__text">
             <h3>  Seo оптимизация</h3>
             <p>  Наши специалисты продвинут ваш сайт вверх по поиску </p>
         </div>
     </article>
     <article class="card">
-        <div class="card__icon card__idea"></div>
+        <div class="card__icon card__idea animated 1 fadeIn delay-3s"></div>
         <div class="card__text">
             <h3> Креативность</h3>
             <p> Наши менеджеры всегда помогут понять, что вам на самом деле надо</p>
         </div>
     </article>
     <article class="card">
-        <div class="card__icon  card__design"></div>
+        <div class="card__icon  card__design animated 1 fadeIn delay-4s"></div>
         <div class="card__text">
             <h3> Опытные веб-дизайнеры </h3>
             <p> Разработаем любой дизайн! Даже в стиле Шагала!</p>
         </div>
     </article>
     <article class="card">
-        <div class="card__icon  card__support"></div>
+        <div class="card__icon  card__support animated 1 fadeIn delay-5s"></div>
         <div class="card__text">
             <h3>   Сопровождение </h3>
             <p>  Сопровождаем ваш сайт всю его жизнь</p>
         </div>
     </article>
 </div>
+
+<div class="wrapper_form">
+    <form action="" >
+     <legend class="wrapper_form__legend">Отправьте нам ваши данные!</legend>
+        <input type="text" placeholder="Ваше имя">
+        <input type="text" placeholder="Ваша фамилия">
+        <input type="text" placeholder="Ваш телефон" required  minlength="7"  maxlength="15">
+        <input type="email" placeholder="Ваша почта" disabled >
+      
+        <label for="data "> <input type="checkbox" name="data" required>
+             Согласен на обработку 
+        
+    </label>
+    <input type="submit" value="отправить">
+    </form>
+</div>
+
+
 </body>
 </html>
