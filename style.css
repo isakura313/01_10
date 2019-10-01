@@ -37,3 +37,19 @@
     width:15%;
     height: 15%;
 }
+.main_cards{
+    display: flex;
+    flex-wrap:wrap;
+    margin-bottom: calc(var(--sfs) * 2);
+}
+
+.card{
+    display: flex;
+    width: 50%;
+    border: 3px dotted black;
+    font-size: calc(var(--sfs)-8px);
+    font-family: Helvectica, sans-serif;
+    line-height: 1.4;
+    letter-spacing: 0.5;
+    padding: 15px;
+}
