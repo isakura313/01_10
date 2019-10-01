@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --sfs:2em;
+    --dyellow: #FFC509;
+    --dorange: #FE9611;
+    --ddarkblue: #1A70BB;
+    --dblue:#2190E9;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    justify-content: space-around;
+}
+.header__h1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: calc(var(--sfs) * 1.5);
+    color: var(--ddarkblue);
+}
+.header__h5{
+    font-family: 'Georgia', sans-serif;
+    font-size: var(--sfs);
+    font-weight: normal;
+    color: var(--dorange);
+}
+.main_logo{
+    display: flex;
+    justify-content: center;
+}
+.main_logo img{
+    width:15%;
+    height: 15%;
+}
