@@ -9,6 +9,9 @@
     --dorange: #FE9611;
     --ddarkblue: #1A70BB;
     --dblue:#2190E9;
+    --hf: 'Playfair Display', serif;
+    --pf:'Roboto', sans-serif;
+    --cf:'Pangolin', cursive;
 }
 
 .header{
@@ -19,12 +22,12 @@
     justify-content: space-around;
 }
 .header__h1{
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--hf);
     font-size: calc(var(--sfs) * 1.5);
     color: var(--ddarkblue);
 }
 .header__h5{
-    font-family: 'Georgia', sans-serif;
+    font-family: var(--pf);  
     font-size: var(--sfs);
     font-weight: normal;
     color: var(--dorange);
@@ -75,8 +78,8 @@
     display: flex;
     width: 50%;
     border: 3px dotted black;
-    font-size: calc(var(--sfs)-8px);
-    font-family: Helvectica, sans-serif;
+    font-size: calc(var(--sfs)  / 1.5);
+    font-family: var(--cf);
     line-height: 1.4;
     letter-spacing: 0.5;
     padding: 15px;
@@ -120,13 +123,24 @@ form{
     width: 250px;   
     
 }
+legend{
+    font-family: var(--hf);
+}
 input{
-    font-size: calc(var(--sfs)/1.5);
+    font-size: 15px;
     border-radius: 3px;
     outline: none;
     margin-bottom: 10px;
-    padding: 5px;
+    padding: 7px;
+    font-family: var(--pf);
 }
+input[type="submit"]{
+    width: 120px;
+    align-self: flex-end;
+    cursor:pointer;
+}
+
+
 .wrapper_form__legend{
     color: var(--ddarkblue);
     font-size: calc(var(--sfs)/1.2);
