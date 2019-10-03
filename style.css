@@ -13,6 +13,20 @@
     --pf:'Roboto', sans-serif;
     --cf:'Pangolin', cursive;
 }
+.wrapper_button{
+    display: flex;
+    justify-content: flex-end;
+}
+.wrapper_button__button{
+    padding: 5px;
+    border: 2px solid black;
+    font-size: 20px;
+    border-radius: 4px;
+    background-color: var(--ddarkblue);
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
 
 .header{
     display: flex;
@@ -138,7 +152,16 @@ input[type="submit"]{
     width: 120px;
     align-self: flex-end;
     cursor:pointer;
+    margin-top: 8px;
 }
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    
+}
+
 
 
 .wrapper_form__legend{

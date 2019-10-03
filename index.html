@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Pangolin|Playfair+Display|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="wrapper_button">
+        <button class="wrapper_button__button animated jello delay-2s">
+            Связаться со специалистом
+        </button>
+    </div>
     <header class="header">
         <h1 class="header__h1"> Веб - студия "АЙТИ-БРЕЙН" </h1>
         <h5 class="header__h5">  Студия сайтов под ключ!</h5>
@@ -69,11 +76,15 @@
         <input type="text" placeholder="Ваша фамилия">
         <input type="text" placeholder="Ваш телефон" required  minlength="7"  maxlength="15">
         <input type="email" placeholder="Ваша почта" disabled >
-      
-        <label for="data "> <input type="checkbox" name="data" required>
-             Согласен на обработку 
+        
 
-    </label>
+        <div class="pretty p-default p-curve p-fill">
+            <input type="checkbox" />
+            <div class="state p-info">
+                <label>Согласен на обработку данных </label>
+            </div>
+        </div>
+
     <input type="submit" value="отправить">
     </form>
 </div>
