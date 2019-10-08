@@ -1,23 +1,41 @@
+"use strict"
+
+
 let quest = document.querySelector('.your_question');
 let button = document.querySelector('.wrapper_button__button');
 let cross = document.querySelector('i');
 
 button.onclick = () => {
+    if(quest.classList.contains('bounceOutLeft')){
+        quest.classList.remove('bounceOutLeft');
+    }
     quest.style.display = "flex";
+    quest.classList.add('animated', 'bounceInRight');
 }
 
-button.onclick = function(){
-    quest.style.display = "flex";
-}
-
-button.addEventListener('click', function(){
-    quest.style.display = "flex";
-})
-
-function show(){
-    quest.style.display = "flex";
-}
 
 cross.onclick = () => {
-    quest.style.display = "none";
+    quest.classList.remove('bounceInRight');
+    quest.classList.add('bounceOutLeft');
+    //  quest.style.display = "none";
 }
+
+
+
+
+
+
+
+
+
+// button.onclick = function(){
+//     quest.style.display = "flex";
+// }
+
+// button.addEventListener('click', function(){
+//     quest.style.display = "flex";
+// })
+
+// function show(){
+//     quest.style.display = "flex";
+// }

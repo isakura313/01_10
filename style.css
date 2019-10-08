@@ -47,7 +47,7 @@
 .cross{
     display: flex;
     justify-content: flex-end;
-    width: 100%;
+    width: 120%;
 }
 .cross i {
     cursor:pointer;
@@ -71,7 +71,7 @@
 }
 .your_question__content form{
     padding-top: 20px;
-    width: 180px;
+    width: 230px;
     display: flex;
     flex-direction: column;
 }
