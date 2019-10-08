@@ -4,6 +4,22 @@
 let quest = document.querySelector('.your_question');
 let button = document.querySelector('.wrapper_button__button');
 let cross = document.querySelector('i');
+let toggle = document.querySelector('.faq_toggle');
+let answer = document.querySelector('.faq_answer');
+let arrow = document.querySelector('.spec');
+
+
+toggle.onclick = () =>{
+	answer.classList.toggle('spec_flex');
+	answer.classList.add('flipInX');
+
+}
+
+
+
+
+
+
 
 button.onclick = () => {
     if(quest.classList.contains('bounceOutLeft')){

@@ -193,6 +193,41 @@
     background-image: url('img/025-chatting.png');
     animation-delay: 5.5s
 }
+
+.faq_wrapper{
+    margin: 0 auto;
+    width: 80%;
+    border: 2px solid black;
+    padding-top:5px;
+}
+.faq_quest{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--sfs);
+    font-family: var(--hf);
+    border-bottom: 2px solid black;
+    width:100%;
+    padding: 3px 0;
+}
+.faq_toggle{
+    background-color: var(--ddarkblue);
+    cursor: pointer;
+    padding: 10px 0;
+
+}
+.faq_toggle i{
+    color: var(--dorange);
+    font-size:calc(var(--sfs)/1.2);
+    padding-left:calc(var(--sfs)/1.5);
+}
+.faq_answer{
+    font-size:calc(var(--sfs)/1.2);
+    font-family: var(--hf);
+    padding: 10px 5px;
+    display: none;
+}
+
 .wrapper_form{
     display: flex;
     justify-content: center;
@@ -236,4 +271,8 @@
     color: var(--ddarkblue);
     font-size: calc(var(--sfs)/1.2);
     text-align: center;
+}
+
+.spec_flex{
+    display: flex;
 }
