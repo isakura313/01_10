@@ -27,6 +27,74 @@
     cursor: pointer;
     outline: none;
 }
+.your_question{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position:fixed;
+    left:0;
+    right:0;
+    top:120px;
+    bottom:0;
+    background-color: var(--ddarkblue);
+    z-index: 9999;
+    width: 400px;
+    height: 300px;
+    margin:0 auto;
+    display: none;
+}
+
+.cross{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.cross i {
+    cursor:pointer;
+    color:var(--dorange);
+    font-size: 25px;
+}
+.your_question__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+
+   
+}
+.your_question__content h3{
+    color: white;
+    text-align: center;
+    font-family: var(--hf);
+    font-size: var(--sfs);
+}
+.your_question__content form{
+    padding-top: 20px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+}
+.your_question__content label{
+    color:white;
+    font-family: var(--cf);
+    font-size: calc(var(--sfs)/1.4);
+    text-align: center;
+}
+.your_question__content input{
+    font-size: 15px;
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+.your_question__content input[type="sumbit"]{
+    text-align: center;
+    align-self: flex-end;
+    width: 90px;
+    font-size: 12px;
+    cursor:pointer;
+}
 
 .header{
     display: flex;
@@ -131,16 +199,16 @@
     background-color: var(--dorange);
     padding: 20px;
 }
-form{
+.wrapper_form form{
     display: flex;
     flex-direction: column;
     width: 250px;   
     
 }
-legend{
+.wrapper_form legend{
     font-family: var(--hf);
 }
-input{
+.wrapper_form input{
     font-size: 15px;
     border-radius: 3px;
     outline: none;
@@ -148,14 +216,14 @@ input{
     padding: 7px;
     font-family: var(--pf);
 }
-input[type="submit"]{
+.wrapper_form input[type="submit"]{
     width: 120px;
     align-self: flex-end;
     cursor:pointer;
     margin-top: 8px;
 }
 
-input[type="checkbox"]{
+.wrapper_form input[type="checkbox"]{
     width: 20px;
     height: 20px;
     padding: 3px;

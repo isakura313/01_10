@@ -5,18 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Pangolin|Playfair+Display|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="code.js" defer></script>
+
 </head>
 <body>
     <div class="wrapper_button">
-        <button class="wrapper_button__button animated jello delay-2s">
+        <button onclick='show()'  class="wrapper_button__button animated jello delay-5s">
             Связаться со специалистом
         </button>
     </div>
+    <div class="your_question">
+        <div class="your_question__content">
+            <div class="cross"> <i class="fas fa-times"></i></div>
+            <h3>Задайте свой вопрос</h3>
+            <form action="">
+                <label for="name">Ваше имя</label>
+                <input type="text" name="name">
+                <label for="tel">Ваш телефон</label>
+                <input type="text" name="tel">
+                <input type="sumbit" value="отправить">
+            </form>
+        </div>
+    </div>
+
     <header class="header">
         <h1 class="header__h1"> Веб - студия "АЙТИ-БРЕЙН" </h1>
         <h5 class="header__h5">  Студия сайтов под ключ!</h5>
