@@ -1,12 +1,16 @@
 "use strict"
 /*
-ТЗ на сегодня 
+ТЗ на следующий раз 
 Привет! Сегодня нужно
--сделать так что бы стрелочка поворачивалась
-- сделать анимацию исчезновения
-- сделать много faq
-- сделать калькулятор
-*/
+ сделать много faq 
+
+ Д/з
+ Если пользователь вводит только строку, тогда калькулятор ругался
+ if
+ найти меотд определения строк
+ до eval
+ очистить и отругать пользователя
+ */
 
 // часть связанная с верхней формой
 //  тут есть еще рафакторинг!!
@@ -35,29 +39,37 @@ let faq_answer = document.querySelector('.faq_answer');
 let faq_arrow = document.querySelector('.spec');
 
 panel_toggle.onclick = () =>{
-    faq_arrow.classList.toggle('animated');
-    faq_arrow.classList.toggle('arrow_rotate');
-    faq_arrow.classList.toggle('heartBeat');
-
+    faq_arrow.classList.add('animated');
+    faq_arrow.classList.add('arrow_rotate');
+    
     if(!faq_answer.classList.contains('zoomIn')){
+        faq_arrow.classList.remove('arrow_rotate1');
+        faq_arrow.classList.add('heartBeat');
+        faq_arrow.classList.add('arrow_rotate');
         faq_answer.classList.add('spec_flex');  //дает видимость
         faq_answer.classList.remove('zoomOut'); //удаляет исчезновение если оно было
         faq_answer.classList.add('zoomIn'); // добавляет анимации появления 
     } else if(faq_answer.classList.contains('zoomIn')) {
-        // сработает если уже появилось
+        faq_arrow.classList.remove('heartBeat');
+        faq_arrow.classList.remove('arrow_rotate');
         faq_answer.classList.remove('zoomIn');
-        //убираем анимацию появления
         faq_answer.classList.add('zoomOut');
-        //добавляем анимацию исчезновения
         setTimeout(() => {
+            faq_arrow.classList.remove('arrow_rotate1');
             faq_answer.classList.remove('spec_flex');
         }, 700);
-            //удаляем класс с видимостью
-       
 
     }
 }
 
+//калькулятор
+let input_calc = document.querySelector(".calc input");
+let button_calc = document.querySelector(".calc__button");
+let result = document.getElementById("result");
+button_calc.onclick = () =>{
+
+    result.innerHTML = "<span>Результат: </span>" + eval(input_calc.value);
+}
 
 
 
