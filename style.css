@@ -273,6 +273,12 @@
     text-align: center;
 }
 
+ /* анимации */
+
 .spec_flex{
     display: flex;
+}
+.arrow_rotate{
+    transform: rotate(180deg);
+    padding-right:calc(var(--sfs)/1.5);
 }

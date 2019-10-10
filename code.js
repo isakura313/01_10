@@ -35,8 +35,27 @@ let faq_answer = document.querySelector('.faq_answer');
 let faq_arrow = document.querySelector('.spec');
 
 panel_toggle.onclick = () =>{
-	faq_answer.classList.toggle('spec_flex');
-	faq_answer.classList.add('flipInX');
+    faq_arrow.classList.toggle('animated');
+    faq_arrow.classList.toggle('arrow_rotate');
+    faq_arrow.classList.toggle('heartBeat');
+
+    if(!faq_answer.classList.contains('zoomIn')){
+        faq_answer.classList.add('spec_flex');  //дает видимость
+        faq_answer.classList.remove('zoomOut'); //удаляет исчезновение если оно было
+        faq_answer.classList.add('zoomIn'); // добавляет анимации появления 
+    } else if(faq_answer.classList.contains('zoomIn')) {
+        // сработает если уже появилось
+        faq_answer.classList.remove('zoomIn');
+        //убираем анимацию появления
+        faq_answer.classList.add('zoomOut');
+        //добавляем анимацию исчезновения
+        setTimeout(() => {
+            faq_answer.classList.remove('spec_flex');
+        }, 700);
+            //удаляем класс с видимостью
+       
+
+    }
 }
 
 
