@@ -1,5 +1,15 @@
 "use strict"
 
+/*
+ТЗ на сегодня 
+Привет! Сегодня нужно
+-сделать так что бы стрелочка поворачивалась
+- сделать анимацию исчезновения
+- сделать много faq
+- сделать калькулятор
+*/
+
+
 
 let quest = document.querySelector('.your_question');
 let button = document.querySelector('.wrapper_button__button');
