@@ -1,19 +1,16 @@
 "use strict"
-/*
-ТЗ на следующий раз 
-Привет! Сегодня нужно
- сделать много faq 
 
- Д/з
- Если пользователь вводит только строку, тогда калькулятор ругался
- if
- найти меотд определения строк
- до eval
- очистить и отругать пользователя
- */
+// в рандомной цитате была цитата случайная
 
-// часть связанная с верхней формой
-//  тут есть еще рафакторинг!!
+
+//рандомая цитата
+let arr_random = ['Суть жизни – найти самого себя', 'Смерть – это стрела, пущенная в тебя, а жизнь – то мгновенье, что она до тебя летит.', 'В диалоге с жизнью важен не ее вопрос, а наш ответ.' ]
+let random_number = Math.floor(Math.random() * arr_random.length);
+let h3_citata = document.getElementById("random_answer");
+h3_citata.innerHTML = arr_random[random_number];
+
+
+
 let quest = document.getElementById('quest'); // получение по id
 let upper_button = document.querySelector('.wrapper_button__button');
 let cross = document.getElementById('cross_icon');
@@ -34,41 +31,65 @@ cross.onclick = () => {
 
 
 //начало faq  
-let panel_toggle = document.querySelector('.faq_toggle');
-let faq_answer = document.querySelector('.faq_answer');
-let faq_arrow = document.querySelector('.spec');
+let panel_toggle = document.querySelectorAll('.faq_toggle');
+let faq_answer = document.querySelectorAll('.faq_answer');
+let faq_arrow = document.querySelectorAll('.spec');
 
-panel_toggle.onclick = () =>{
-    faq_arrow.classList.add('animated');
-    faq_arrow.classList.add('arrow_rotate');
-    
-    if(!faq_answer.classList.contains('zoomIn')){
-        faq_arrow.classList.remove('arrow_rotate1');
-        faq_arrow.classList.add('heartBeat');
-        faq_arrow.classList.add('arrow_rotate');
-        faq_answer.classList.add('spec_flex');  //дает видимость
-        faq_answer.classList.remove('zoomOut'); //удаляет исчезновение если оно было
-        faq_answer.classList.add('zoomIn'); // добавляет анимации появления 
-    } else if(faq_answer.classList.contains('zoomIn')) {
-        faq_arrow.classList.remove('heartBeat');
-        faq_arrow.classList.remove('arrow_rotate');
-        faq_answer.classList.remove('zoomIn');
-        faq_answer.classList.add('zoomOut');
-        setTimeout(() => {
-            faq_arrow.classList.remove('arrow_rotate1');
-            faq_answer.classList.remove('spec_flex');
-        }, 700);
 
+for (let i = 0; i < panel_toggle.length; i++) {
+    panel_toggle[i].onclick = () => {
+        faq_animate(faq_arrow[i], faq_answer[i]);
     }
+    
 }
+
+function faq_animate(arrow, answer){
+    arrow.classList.add('animated');
+    arrow.classList.add('arrow_rotate');
+    if(!answer.classList.contains('zoomIn')){
+        arrow.classList.remove('arrow_rotate1');
+        arrow.classList.add('heartBeat');
+        arrow.classList.add('arrow_rotate');
+        answer.classList.add('spec_flex');  //дает видимость
+        answer.classList.remove('zoomOut'); //удаляет исчезновение если оно было
+        answer.classList.add('zoomIn'); // добавляет анимации появления 
+    } else if(answer.classList.contains('zoomIn')) {
+        arrow.classList.remove('heartBeat');
+        arrow.classList.remove('arrow_rotate');
+        answer.classList.remove('zoomIn');
+        answer.classList.add('zoomOut');
+        setTimeout(() => {
+            arrow.classList.remove('arrow_rotate1');
+            answer.classList.remove('spec_flex');
+        }, 700);
+    
+    }
+    
+}
+
+
+
+
 
 //калькулятор
 let input_calc = document.querySelector(".calc input");
 let button_calc = document.querySelector(".calc__button");
 let result = document.getElementById("result");
-button_calc.onclick = () =>{
 
+
+
+button_calc.onclick = () =>{
+    try{
+    if(input_calc.value == ''){ 
+        return alert("Ты забыл ввести, Вась!"); 
+    } else  if(isNaN(eval(input_calc.value))){
+        return alert("Введенные данные в корне неверны!"); 
+    }
     result.innerHTML = "<span>Результат: </span>" + eval(input_calc.value);
+}
+catch(err){
+    alert("Скорее всего неверные данные!");
+}
 }
 
 
