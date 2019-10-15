@@ -1,6 +1,8 @@
 "use strict"
 
-// в рандомной цитате была цитата случайная
+
+// регистрация пользавателя
+//его имя отображается справа
 
 
 //рандомая цитата
@@ -8,6 +10,17 @@ let arr_random = ['Суть жизни – найти самого себя', '�
 let random_number = Math.floor(Math.random() * arr_random.length);
 let h3_citata = document.getElementById("random_answer");
 h3_citata.innerHTML = arr_random[random_number];
+
+
+//регистрация пользователя
+let user_name = document.getElementById('registration');
+let submit = document.getElementById('submit');
+let input_name = document.getElementsByName('nameuser');
+
+submit.onclick = () => {
+    user_name.innerHTML = input_name[0].value;
+}
+
 
 
 
