@@ -108,6 +108,13 @@ catch(err){
 }
 
 
+// тут у нас будет валидизация формы
+$('.wrapper_form').submit(function(e){
+    console.log(e);
+    // e.preventDefault();
+})
+
+
 
 
 
