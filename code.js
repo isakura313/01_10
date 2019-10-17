@@ -110,8 +110,16 @@ catch(err){
 
 // тут у нас будет валидизация формы
 $('.wrapper_form').submit(function(e){
-    console.log(e);
-    // e.preventDefault();
+    e.preventDefault();
+  
+    let errorElement = $(this).find('.error_message');
+
+    let fioVal = $(this).find("[name='surname']").val();
+
+    let phonelVal = $(this).find("[name='tel']").val();
+
+    let emailVal = $(this).find("[name='mail']").val();
+
 })
 
 
