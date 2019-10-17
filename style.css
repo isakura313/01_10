@@ -15,7 +15,8 @@
 }
 .wrapper_button{
     display: flex;
-    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
 }
 .wrapper_button__button{
     padding: 5px;

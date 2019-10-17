@@ -1,9 +1,8 @@
 "use strict"
 
 
-// регистрация пользавателя
-//его имя отображается справа
-
+// кнопка регистрации показывается 
+// имя пользователя в одной строку с кнопкой
 
 //рандомая цитата
 let arr_random = ['Суть жизни – найти самого себя', 'Смерть – это стрела, пущенная в тебя, а жизнь – то мгновенье, что она до тебя летит.', 'В диалоге с жизнью важен не ее вопрос, а наш ответ.' ]
@@ -16,9 +15,12 @@ h3_citata.innerHTML = arr_random[random_number];
 let user_name = document.getElementById('registration');
 let submit = document.getElementById('submit');
 let input_name = document.getElementsByName('nameuser');
+user_name.style.display='none';
 
 submit.onclick = () => {
+    user_name.style.display='block';
     user_name.innerHTML = input_name[0].value;
+
 }
 
 
