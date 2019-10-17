@@ -114,12 +114,21 @@ $('.wrapper_form').submit(function(e){
   
     let errorElement = $(this).find('.error_message');
 
+    let nameVal = $(this).find("[name='name']").val();
     let fioVal = $(this).find("[name='surname']").val();
     let phoneVal = $(this).find("[name='tel']").val();
     let emailVal = $(this).find("[name='mail']").val();
-
-    if(fioVal == '' || phoneVal == '' || emailVal == ''){
+    var reg = new RegExp('^[0-9]+$');
+    alert(reg.test(phoneVal));
+    if(nameVal == '' || fioVal == '' || phoneVal == '' || emailVal == ''){
         alert("Вы не заполнили поля, молодой человек!");
+  
+        if(nameVal == ''){
+            $(this).find("[name='name']").css('border-color', 'red');
+        } 
+        else{
+            $(this).find("[name='name']").css('border-color', 'green');
+        }
 
         if(fioVal == ''){
             $(this).find("[name='surname']").css('border-color', 'red');
@@ -130,7 +139,8 @@ $('.wrapper_form').submit(function(e){
 
         if(phoneVal == ''){
             $(this).find("[name='tel']").css('border-color', 'red');
-        } 
+        
+        }
         else{
             $(this).find("[name='tel']").css('border-color', 'green');
         }
@@ -141,6 +151,11 @@ $('.wrapper_form').submit(function(e){
         else{
             $(this).find("[name='mail']").css('border-color', 'green');
         }
+    } else if(!reg.test(phoneVal)){
+         alert('введите числа');
+    }
+     else{alert("форма отправлена!");
+     
     }
 
 })
