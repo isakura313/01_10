@@ -115,12 +115,10 @@ $('.wrapper_form').submit(function(e){
     let errorElement = $(this).find('.error_message');
 
     let fioVal = $(this).find("[name='surname']").val();
-
-    let phonelVal = $(this).find("[name='tel']").val();
-
+    let phoneVal = $(this).find("[name='tel']").val();
     let emailVal = $(this).find("[name='mail']").val();
 
-    if(fioVal == '' || phonelVal == '' || emailVal == ''){
+    if(fioVal == '' || phoneVal == '' || emailVal == ''){
         alert("Вы не заполнили поля, молодой человек!");
 
         if(fioVal == ''){
@@ -129,12 +127,14 @@ $('.wrapper_form').submit(function(e){
         else{
             $(this).find("[name='surname']").css('border-color', 'green');
         }
+
         if(phoneVal == ''){
             $(this).find("[name='tel']").css('border-color', 'red');
         } 
         else{
             $(this).find("[name='tel']").css('border-color', 'green');
         }
+
         if(emailVal == ''){
             $(this).find("[name='mail']").css('border-color', 'red');
         } 
