@@ -120,6 +120,29 @@ $('.wrapper_form').submit(function(e){
 
     let emailVal = $(this).find("[name='mail']").val();
 
+    if(fioVal == '' || phonelVal == '' || emailVal == ''){
+        alert("Вы не заполнили поля, молодой человек!");
+
+        if(fioVal == ''){
+            $(this).find("[name='surname']").css('border-color', 'red');
+        } 
+        else{
+            $(this).find("[name='surname']").css('border-color', 'green');
+        }
+        if(phoneVal == ''){
+            $(this).find("[name='tel']").css('border-color', 'red');
+        } 
+        else{
+            $(this).find("[name='tel']").css('border-color', 'green');
+        }
+        if(emailVal == ''){
+            $(this).find("[name='mail']").css('border-color', 'red');
+        } 
+        else{
+            $(this).find("[name='mail']").css('border-color', 'green');
+        }
+    }
+
 })
 
 
