@@ -121,28 +121,43 @@ wp_form.onsubmit = function(e){
     let fioVal = wp_form.querySelector("[name='surname']").value;
     let phoneVal = wp_form.querySelector("[name='tel']").value;
     let emailVal = wp_form.querySelector("[name='mail']").value;
+    let checkBox = wp_form.querySelector("[type='checkbox']");
+
     var reg = new RegExp('^[0-9]+$');
     // alert(reg.test(phoneVal));
-    if(nameVal == '' || fioVal == '' || phoneVal == '' || emailVal == ''){
-        alert("Вы не заполнили поля, молодой человек!");
+    if(nameVal == '' || 
+        fioVal == '' 
+        || phoneVal == '' 
+        || emailVal == '' 
+        || nameVal.length < 2 
+        || !reg.test(phoneVal)
+        || checkBox.checked != "true"
+
+        ){
+        errorElement.innerHTML = "Вы не заполнили все поля, молодой человек!";
   
         if(nameVal == ''){
             wp_form.querySelector("[name='name']").style.border = "red solid 2px";
-        } 
+        } else if(nameVal.length < 2 ){
+            wp_form.querySelector("[name='name']").style.border = "red solid 2px";
+            wp_form.querySelector(".name_helper").innerHTML = "Имя должно быть длинее";
+        }
         else{
             wp_form.querySelector("[name='name']").style.border = "green solid 2px";
         }
-
+        
         if(fioVal == ''){
             wp_form.querySelector("[name='surname']").style.border = "red solid 2px";
         } 
         else{
             wp_form.querySelector("[name='surname']").style.border = "green solid 2px";
         }
-
+        
         if(phoneVal == ''){
             wp_form.querySelector("[name='tel']").style.border = "red solid 2px";
-        
+        } else if(!reg.test(phoneVal)){
+            wp_form.querySelector(".tel_helper").innerHTML = "Телефон состоит из цифр";
+            wp_form.querySelector("[name='tel']").style.border = "red solid 2px";
         }
         else{
             wp_form.querySelector("[name='tel']").style.border = "green solid 2px";
@@ -154,14 +169,66 @@ wp_form.onsubmit = function(e){
         else{
             wp_form.querySelector("[name='mail']").style.border = "green solid 2px";
         }
+
+        if(checkBox.checked != true ){
+            wp_form.querySelector(".checkbox_helper").innerHTML = 'ну ка согласился на обработку данных!';
+        } else if(checkBox.checked == true ){
+            wp_form.querySelector(".checkbox_helper").innerHTML = ' все клево';
+
+        }
     } else if(!reg.test(phoneVal)){
-         alert('введите числа');
+         alert('введите числа'); 
     }
      else {alert("форма отправлена!");
      
     }
 
 };
+
+
+//смена тем на нашем сайте
+// по кнопке 1 у нас ставится темная тема 49
+//по кнопка 2 - как была 50
+//по кнопке 3 - альтернативная 51 
+//document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
+//addeventlinstener -вообще на пространство документа
+// а когда происходит фокус формы - тогда листенер выключается, и наоборот
+
+
+function change(variable ,color){
+    document.querySelector(':root').style.setProperty(variable, color);
+}
+
+
+document.addEventListener('keypress', handle);
+
+
+wp_form.querySelector("[name='tel']").onfocus = function()
+{
+    document.removeEventListener('keypress', handle);
+}
+wp_form.querySelector("[name='tel']").onblur = function()
+{
+    document.addEventListener('keypress', handle);
+}
+
+
+ function handle(e){
+     if (e.keyCode == 49 ){
+         change('--dorange','green');
+         change('--ddarkblue','black');
+
+    } else if(e.keyCode == 50){
+        change('--dorange','#FE9611');
+        change('--ddarkblue','#1A70BB');
+
+    } else if(e.keyCode == 51){
+        change('--dorange',"pink");
+        change('--ddarkblue',"#5D1F82");
+    } 
+ }
+
+
 
 
 
