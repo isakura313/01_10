@@ -127,32 +127,32 @@ wp_form.onsubmit = function(e){
         alert("Вы не заполнили поля, молодой человек!");
   
         if(nameVal == ''){
-            wp_form.querySelector("[name='name']").css('border-color', 'red');
+            wp_form.querySelector("[name='name']").style.border = "red solid 2px";
         } 
         else{
-            wp_form.querySelector("[name='name']").css('border-color', 'green');
+            wp_form.querySelector("[name='name']").style.border = "green solid 2px";
         }
 
         if(fioVal == ''){
-            wp_form.querySelector("[name='surname']").css('border-color', 'red');
+            wp_form.querySelector("[name='surname']").style.border = "red solid 2px";
         } 
         else{
-            wp_form.querySelector("[name='surname']").css('border-color', 'green');
+            wp_form.querySelector("[name='surname']").style.border = "green solid 2px";
         }
 
         if(phoneVal == ''){
-            wp_form.querySelector("[name='tel']").css('border-color', 'red');
+            wp_form.querySelector("[name='tel']").style.border = "red solid 2px";
         
         }
         else{
-            wp_form.querySelector("[name='tel']").css('border-color', 'green');
+            wp_form.querySelector("[name='tel']").style.border = "green solid 2px";
         }
 
         if(emailVal == ''){
-            wp_form.querySelector("[name='mail']").css('border-color', 'red');
+            wp_form.querySelector("[name='mail']").style.border = "red solid 2px";
         } 
         else{
-            wp_form.querySelector("[name='mail']").css('border-color', 'green');
+            wp_form.querySelector("[name='mail']").style.border = "green solid 2px";
         }
     } else if(!reg.test(phoneVal)){
          alert('введите числа');
