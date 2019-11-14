@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper_button {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.wrapper_button__button {
+  padding: 5px;
+  border: 2px solid black;
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: #1A70BB;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.your_question {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 120px;
+  bottom: 0;
+  background-color: #1A70BB;
+  z-index: 9999;
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  display: none;
+}
+
+.cross {
+  display: flex;
+  justify-content: flex-end;
+  width: 120%;
+}
+
+.cross i {
+  cursor: pointer;
+  color: #FE9611;
+  font-size: 25px;
+}
+
+.your_question__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 7px;
+}
+
+.your_question__content h3 {
+  color: white;
+  text-align: center;
+  font-family: Playfair Display;
+  font-size: 2em;
+}
+
+.your_question__content form {
+  padding-top: 20px;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+.your_question__content label {
+  color: white;
+  font-family: Pangolin;
+  font-size: 1.42857em;
+  text-align: center;
+}
+
+.your_question__content input {
+  font-size: 15px;
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: 10px;
+  padding: 7px;
+}
+
+.your_question__content input[type="sumbit"] {
+  text-align: center;
+  align-self: flex-end;
+  width: 90px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  justify-content: space-around;
+}
+
+.header__h1 {
+  font-family: Playfair Display;
+  font-size: 3em;
+  color: #1A70BB;
+}
+
+.header__h5 {
+  font-family: Roboto;
+  font-size: 2em;
+  font-weight: normal;
+  color: #FE9611;
+}
+
+.main_logo {
+  display: flex;
+  justify-content: center;
+}
+
+.main_logo img {
+  width: 15%;
+  height: 15%;
+  transition: box-shadow 2s;
+}
+
+.main_logo img:hover {
+  animation: rotate 1s linear 1 reverse;
+  box-shadow: 2px 4px 3px black;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes hulk {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(2, 2);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rubber {
+  0% {
+    transform: skew(0deg, 0deg);
+  }
+  100% {
+    transform: skew(30deg, 10deg);
+  }
+}
+
+.main_cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 4em;
+  margin-top: 2em;
+}
+
+.card {
+  display: flex;
+  width: 50%;
+  border: 3px dotted black;
+  font-size: 1.33333em;
+  font-family: Pangolin;
+  line-height: 1.4;
+  letter-spacing: 0.5;
+  padding: 15px;
+}
+
+.card__icon {
+  min-width: 50px;
+  height: 50px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 30px;
+}
+
+.card__eye {
+  background-image: url("img/007-eye.png");
+}
+
+.card__deadline {
+  background-image: url("img/003-deadline.png");
+}
+
+.card__search {
+  background-image: url("img/009-search.png");
+}
+
+.card__idea {
+  background-image: url("img/037-idea-1.png");
+}
+
+.card__design {
+  background-image: url("img/035-graphic-design.png");
+}
+
+.card__support {
+  background-image: url("img/025-chatting.png");
+  animation-delay: 5.5s;
+}
+
+.faq_wrapper {
+  margin: 0 auto;
+  width: 80%;
+  border: 2px solid black;
+  padding-top: 5px;
+  margin-bottom: 2em;
+}
+
+.faq_quest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-family: Playfair Display;
+  border-bottom: 2px solid black;
+  width: 100%;
+  padding: 3px 0;
+}
+
+.faq_toggle {
+  background-color: #1A70BB;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.faq_toggle i {
+  color: #FE9611;
+  font-size: 1.66667em;
+  padding-left: 1.33333em;
+}
+
+.faq_answer {
+  font-size: 1.66667em;
+  font-family: Playfair Display;
+  padding: 10px 5px;
+  display: none;
+  text-align: center;
+  justify-content: center;
+}
+
+.calc {
+  background-color: #1A70BB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  margin: 2em 0;
+}
+
+.calc input {
+  width: 300px;
+  font-size: 1.33333em;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.wrapper__calc {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc__button {
+  font-size: 15px;
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: 10px;
+  padding: 7px;
+  font-family: Roboto;
+  align-self: flex-end;
+  cursor: pointer;
+  background-color: #FE9611;
+}
+
+.calc__button:hover {
+  background-color: #432600;
+  color: #e6e6e6;
+}
+
+.wrapper_form {
+  display: flex;
+  justify-content: center;
+  background-color: #FE9611;
+  padding: 20px;
+}
+
+.wrapper_form form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.wrapper_form legend {
+  font-family: Playfair Display;
+}
+
+.wrapper_form input {
+  font-size: 15px;
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: 10px;
+  padding: 7px;
+  font-family: Roboto;
+  border: 2px solid rgba(255, 0, 0, 0);
+}
+
+.wrapper_form input:focus {
+  border: 2px solid blue;
+}
+
+.wrapper_form input[type="submit"] {
+  width: 120px;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.wrapper_form input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  padding: 3px;
+}
+
+.wrapper_form__legend {
+  color: #1A70BB;
+  font-size: 1.66667em;
+  text-align: center;
+}
+
+.spec_flex {
+  display: flex;
+}
+
+.arrow_rotate {
+  transform: rotate(180deg);
+  padding-right: 1.33333em;
+}
+
+.arrow_rotate1 {
+  transform: rotate(0deg);
+  padding-right: 1.33333em;
+}
+
+.error_message {
+  color: #0d552b;
+  font-size: 1.42857em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.helper {
+  color: green;
+  text-align: center;
+}
+
+.checkbox_helper {
+  display: block;
+}

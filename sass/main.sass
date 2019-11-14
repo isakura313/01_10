@@ -1,0 +1,313 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+$sfs: 2em
+$dyellow: #FFC509
+$dorange: #FE9611
+$ddarkblue: #1A70BB
+$dblue: #2190E9
+$hf: Playfair Display
+$pf: Roboto
+$cf: Pangolin
+
+@mixin center($direct)
+    display: flex
+    justify-content: center
+    align-items: $direct
+
+.wrapper_button
+    display: flex
+    align-items: flex-end
+    flex-direction: column
+
+.wrapper_button__button
+    padding: 5px
+    border: 2px solid black
+    font-size: 20px
+    border-radius: 4px
+    background-color: $ddarkblue
+    color: white
+    cursor: pointer
+    outline: none
+
+.your_question
+    @include center(flex-start)
+    position: fixed
+    left: 0
+    right: 0
+    top: 120px
+    bottom: 0
+    background-color: $ddarkblue
+    z-index: 9999
+    width: 400px
+    height: 300px
+    margin: 0 auto
+    display: none
+
+
+.cross
+    display: flex
+    justify-content: flex-end
+    width: 120%
+    i 
+        cursor: pointer
+        color: $dorange
+        font-size: 25px
+
+.your_question__content
+    @include center(center)
+    flex-direction: column
+    padding: 7px
+    h3
+        color: white
+        text-align: center
+        font-family: $hf
+        font-size: $sfs
+    form
+        padding-top: 20px
+        width: 230px
+        display: flex
+        flex-direction: column
+    label
+        color: white
+        font-family: $cf
+        font-size: $sfs/1.4
+        text-align: center
+    input
+        font-size: 15px
+        border-radius: 3px
+        outline: none
+        margin-bottom: 10px
+        padding: 7px
+    input[type="sumbit"]
+        text-align: center
+        align-self: flex-end
+        width: 90px
+        font-size: 12px
+        cursor: pointer
+
+.header
+    display: flex
+    flex-direction: column
+    align-items: center
+    height: 200px
+    justify-content: space-around
+
+.header__h1
+    font:
+        family: $hf
+        size: $sfs * 1.5
+    color: $ddarkblue
+
+.header__h5
+    font:
+        family: $pf  
+        size: $sfs
+        weight: normal
+    color: $dorange
+
+.main_logo
+    display: flex
+    justify-content: center
+    img
+        width: 15%
+        height: 15%
+        transition: box-shadow 2s
+    img:hover
+        animation: rotate 1s linear 1 reverse
+        box-shadow: 2px 4px 3px black
+
+
+@keyframes pulse
+    0% 
+        opacity: 0
+    100% 
+        opacity: 0.8
+
+@keyframes hulk
+    0% 
+        transform: scale(1,1)
+    100% 
+        transform: scale(2,2)
+
+@keyframes rotate
+    0% 
+        transform: rotate(0deg)
+    100% 
+        transform: rotate(360deg)
+
+@keyframes rubber
+    0% 
+        transform: skew(0deg, 0deg)
+    100% 
+        transform: skew(30deg, 10deg)
+
+.main_cards
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: $sfs * 2
+    margin-top: $sfs
+
+.card
+    display: flex
+    width: 50%
+    border: 3px dotted black
+    font-size: $sfs/ 1.5
+    font-family: $cf
+    line-height: 1.4
+    letter-spacing: 0.5
+    padding: 15px
+
+.card__icon
+    min-width: 50px
+    height: 50px
+    background:
+        position: center center
+        size: contain
+        repeat: no-repeat
+    margin-right: 30px
+
+.card__eye
+    background-image: url('img/007-eye.png')
+
+.card__deadline
+    background-image: url('img/003-deadline.png')
+
+.card__search
+    background-image: url('img/009-search.png')
+
+.card__idea
+    background-image: url('img/037-idea-1.png')
+
+.card__design
+    background-image: url('img/035-graphic-design.png')
+
+.card__support
+    background-image: url('img/025-chatting.png')
+    animation-delay: 5.5s
+
+
+.faq_wrapper
+    margin: 0 auto
+    width: 80%
+    border: 2px solid black
+    padding-top: 5px
+    margin-bottom: $sfs
+
+.faq_quest
+    @include center(center)
+    font-size: $sfs
+    font-family: $hf
+    border-bottom: 2px solid black
+    width: 100%
+    padding: 3px 0
+
+.faq_toggle
+    background-color: $ddarkblue
+    cursor: pointer
+    padding: 10px 0
+    i
+        color: $dorange
+        font-size: $sfs/1.2
+        padding-left: $sfs/1.5
+.faq_answer
+    font-size: $sfs/1.2
+    font-family: $hf
+    padding: 10px 5px
+    display: none
+    text-align: center
+    justify-content: center
+
+.calc
+    background-color: $ddarkblue
+    @include center(center)
+    flex-direction: column
+    padding: $sfs
+    margin: $sfs 0
+    input
+        width: 300px
+        font-size: $sfs/1.5
+        padding: 10px
+        margin-bottom: 20px
+        margin-top: 20px
+        border-radius: 5px
+
+.wrapper__calc
+    display: flex
+    flex-direction: column
+
+.calc__button
+    font-size: 15px
+    border-radius: 3px
+    outline: none
+    margin-bottom: 10px
+    padding: 7px
+    font-family: $pf
+    align-self: flex-end
+    cursor: pointer
+    background-color: $dorange
+
+.calc__button:hover
+    background-color: darken($dorange, 40%)
+    color: lighten(black, 90%)
+.wrapper_form
+    display: flex
+    justify-content: center
+    background-color: $dorange
+    padding: 20px
+    form
+        display: flex
+        flex-direction: column
+        width: 250px   
+    legend
+        font-family: $hf
+    input
+        font-size: 15px
+        border-radius: 3px
+        outline: none
+        margin-bottom: 10px
+        padding: 7px
+        font-family: $pf
+        border: 2px solid rgba(255, 0, 0, 0)
+    input:focus
+        border: 2px solid blue
+    input[type="submit"]
+        width: 120px
+        align-self: flex-end
+        cursor: pointer
+        margin-top: 8px
+    input[type="checkbox"]
+        width: 20px
+        height: 20px
+        padding: 3px
+    
+.wrapper_form__legend
+    color: $ddarkblue
+    font-size: $sfs/1.2
+    text-align: center
+
+.spec_flex
+    display: flex
+
+.arrow_rotate
+    transform: rotate(180deg)
+    padding-right: $sfs/1.5
+
+.arrow_rotate1
+    transform: rotate(0deg)
+    padding-right: $sfs/1.5
+
+.error_message
+    color: rgb(13, 85, 43)
+    font-size: $sfs/1.4
+    text-align: center
+    font-weight: bold
+
+.helper
+    color: green
+    text-align: center
+
+.checkbox_helper
+    display: block
